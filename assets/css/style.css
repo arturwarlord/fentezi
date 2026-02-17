@@ -1,0 +1,410 @@
+@charset "UTF-8";
+/* Default styles */
+:root {
+    --color-bg: #f5e1d8;
+ /* Более светлый и яркий бежевый фон */
+    --color-primary: #a5694b;
+ /* Более яркий и насыщенный коричнево-розовый */
+    --color-secondary: #937a5c;
+ /* Светлый, теплый бежево-розовый */
+    --color-accent: #c3aba2;
+ /* Яркий, насыщенный коричневый с красным */
+    --color-text: #4a3124;
+ /* Светлее, более яркий коричневый для текста */
+    --color-white: #fffaf7;
+ /* Очень светлый оттенок, чуть ярче */
+    --color-shadow: rgba(0, 0, 0, 0.3);
+ /* Немного сильнее тень для большего контраста */
+    --transition-speed: 0.3s;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+  /* Фон с изображением */
+    background-image: url("../img/fon.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  /* Добавляем черный полупрозрачный слой для затемнения */
+    position: relative;
+    color: var(--color-text);
+}
+
+/* Добавляем псевдоэлемент для затемнения */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+ /* уровень затемнения, по необходимости регулировки */
+    z-index: 1;
+}
+
+/* Всё содержимое сайта должно быть внутри контейнера с высоким z-index */
+.page-content {
+    position: relative;
+    z-index: 2;
+  /* Можно добавить внутренние отступы, если нужно */
+}
+
+/* Blocks */
+/* Хедер */
+header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 1px 6px var(--color-shadow);
+    box-shadow: 0 1px 6px var(--color-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Логотип */
+.logo {
+    font-weight: 700;
+    font-size: 28px;
+ /* Немного увеличил размер */
+    color: var(--color-accent);
+    font-family: "Brush Script MT", cursive;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+ /* Легкая тень для объема */
+    letter-spacing: 1.5px;
+ /* Пространство между буквами */
+    -webkit-transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Эффект при наведении - мягкое свечение цветом акцента */
+.logo:hover {
+    text-shadow: 0 0 8px #ff4d6d, 0 0 12px #ff4d6d;
+}
+
+/* Навигация */
+nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    -webkit-transition: var(--transition-speed);
+    transition: var(--transition-speed);
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    outline: none;
+    color: var(--color-primary);
+}
+
+/* Иконка корзины */
+.cart-icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    fill: var(--color-accent);
+    -webkit-transition: fill var(--transition-speed);
+    transition: fill var(--transition-speed);
+}
+
+.cart-icon:hover {
+    fill: var(--color-primary);
+}
+
+/* Главный баннер с фоновой картинкой */
+.hero {
+    position: relative;
+    min-height: 400px;
+    background-image: url("../img/fon.png");
+    background-size: cover;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* Картинка на переднем плане */
+.hero img {
+    max-width: 620px;
+    border-radius: 12px;
+    -webkit-transition: -webkit-transform 0.4s ease;
+    transition: -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: none;
+    padding: 12px;
+}
+
+.hero img:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    nav ul {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin-left: 15px;
+        margin-bottom: 8px;
+    }
+
+    .search-section {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+
+    .search-section select {
+        width: 100%;
+    }
+
+    section.products-section {
+        padding: 0 10px;
+    }
+}
+/* Секция поиска и выбора */
+.search-section {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 15px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.search-section input[type=search] {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    min-width: 220px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 8px;
+    outline: none;
+    -webkit-transition: border-color var(--transition-speed);
+    transition: border-color var(--transition-speed);
+    color: var(--color-text);
+}
+
+.search-section input[type=search]:focus {
+    border-color: var(--color-accent);
+}
+
+.search-section select {
+    width: 180px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 8px;
+    outline: none;
+    color: var(--color-text);
+    cursor: pointer;
+    -webkit-transition: border-color var(--transition-speed);
+    transition: border-color var(--transition-speed);
+    background-color: var(--color-white);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--color-accent) 50%), linear-gradient(135deg, var(--color-accent) 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px;
+    background-repeat: no-repeat;
+}
+
+.search-section select:focus {
+    border-color: var(--color-accent);
+}
+
+/* Секции товаров */
+section.products-section {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 15px;
+}
+
+section.products-section h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+/* Сетка товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Карточка товара */
+.product-card {
+    width: 250px;
+ /* или ваш размер */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.product_delete {
+    width: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+/* Сделать описание под картинкой */
+.product-info {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.product-name {
+    color: #dedede;
+}
+
+/* Область с ценой и кнопкой - параллельно */
+.product-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+/* Стиль для цены */
+.product-price {
+    font-size: 18px;
+    color: #d1d1d1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+
+.price-current {
+    font-weight: bold;
+    color: #e63946;
+ /* яркий цвет для новой цены */
+    font-size: 18px;
+}
+
+/* Стиль для кнопки */
+.buy-button {
+    background-color: rgba(154, 77, 49, 0.58);
+ /* ваши цвета */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: rgba(154, 77, 49, 0.21);
+}
+
+/* Vendor libs */

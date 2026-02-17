@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Фентези Букет</title>
+</head>
+<body>
+
+    <div class="page-content">
+    <header>
+      <div class="logo" aria-label="Логотип Клубника в шоколаде">Фентези букет</div>
+    
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a href="#hot-products">Горячие товары</a></li>
+          <li><a href="#holidays">Праздники</a></li>
+          <li><a href="#main-products">Основные товары</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    
+      <!-- Иконка корзины (SVG) -->
+      <svg class="cart-icon" viewBox="0 0 24 24" aria-label="Корзина" role="img" tabindex="0" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.82 14h8.11c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.1-.3.07-.46-.07-.39-.41-.67-.82-.67H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44c-.18.32-.25.7-.19 1.07.11.69.73 1.16 1.43 1.16H19v-2H7.82z"/>
+      </svg>
+    </header>
+    
+    <main>
+    
+      <section class="hero" aria-label="Главный баннер сайта с клубникой в шоколаде">
+        <!-- Картинка на переднем плане -->
+        <img id="hero-image" src="assets/img/skidka_fon.png" alt="Клубника в шоколаде на тарелке" />
+      </section>
+    
+      <!-- Секция поиска и категории -->
+      <section id="search-scroll" class="search-section" aria-label="Поиск и фильтр товаров">
+        <input type="search" id="search" placeholder="Поиск по товарам..." aria-label="Поле для поиска по товарам" />
+        <select id="category" aria-label="Выбор категории товара">
+          <option value="all">Все категории</option>
+          <option value="hot">Горячие товары</option>
+          <option value="holidays">Праздники</option>
+          <option value="main">Основные товары</option>
+        </select>
+      </section>
+    
+      <!-- Горячие товары -->
+      <section id="hot-products" class="products-section" aria-label="Горячие товары">
+        <h2>🔥 Горячие товары</h2>
+        <div class="products-grid">
+    
+          <!-- Пример карточки товара -->
+          <div class="product-card" aria-label="Клубника в шоколаде №1">
+             <div class="product_delete">
+                  <img src="assets/img/fon.png" alt="Клубника в шоколаде №1" />
+    
+                  <div class="product-info">
+                    <div class="product-name">Клубника в шоколаде №1</div>
+                    <div class="product-price">
+                        <span class="price-old">700 ₽</span> <!-- старая цена -->
+                        <span class="price-current">500 ₽</span> <!-- новая цена -->
+                    </div>
+                  </div>
+            </div>
+    
+              <div class="product-footer">
+                <button class="buy-button">В корзину</button>
+              </div>
+    
+          </div>
+    
+    
+        </div>
+      </section>
+    
+      <!-- Праздники -->
+      <section id="holidays" class="products-section" aria-label="Праздничные товары">
+        <h2>🎉 Праздничные товары</h2>
+        <div class="products-grid">
+          <div class="product-card" aria-label="Подарочный набор к Новому году">
+            <img src="https://images.unsplash.com/photo-1549924426-ecb8f0dcd2f6?auto=format&fit=crop&w=300&q=80" alt="Подарочный набор к Новому году" />
+            <div class="product-name">Подарочный набор к Новому году</div>
+            <div class="product-price">1200 ₽</div>
+          </div>
+          <div class="product-card" aria-label="Пасхальный набор">
+            <img src="https://images.unsplash.com/photo-1549924426-ecb8f0dcd2f6?auto=format&fit=crop&w=300&q=80" alt="Пасхальный набор" />
+            <div class="product-name">Пасхальный набор</div>
+            <div class="product-price">900 ₽</div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- Основные товары -->
+      <section id="main-products" class="products-section" aria-label="Основные товары">
+        <h2>🍫 Основные товары</h2>
+        <div class="products-grid">
+          <div class="product-card" aria-label="Классический шоколадный набор">
+            <img src="https://images.unsplash.com/photo-1570785742708-42040341d358?auto=format&fit=crop&w=300&q=80" alt="Классический шоколадный набор" />
+            <div class="product-name">Классический шоколадный набор</div>
+            <div class="product-price">700 ₽</div>
+          </div>
+          <div class="product-card" aria-label="Подарочный набор с клубникой">
+            <img src="https://images.unsplash.com/photo-1549924426-ecb8f0dcd2f6?auto=format&fit=crop&w=300&q=80" alt="Подарочный набор с клубникой" />
+            <div class="product-name">Подарочный набор с клубникой</div>
+            <div class="product-price">950 ₽</div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- Контакты -->
+      <section id="contact" class="products-section" aria-label="Контакты и доставка">
+        <h2>📍 Контакты и доставка</h2>
+        <p>Свяжитесь с нами: example@email.com</p>
+        <p>Доставка по городу и регионам</p>
+      </section>
+    
+    </main>
+    
+    <!-- Подвал сайта -->
+    <footer style="background-color: var(--color-white); padding: 20px 30px; text-align: center; box-shadow: 0 -1px 6px var(--color-shadow); margin-top: 40px;">
+      <p>&copy; 2026 Клубника в шоколаде. Все права защищены.</p>
+    </footer>
+    </div>
+    
+    <!-- Скрипт для поиска (пример) -->
+    <script>
+      const searchInput = document.getElementById('search');
+      const categorySelect = document.getElementById('category');
+    
+      // Исключительно простая фильтрация (для примера)
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        document.querySelectorAll('.product-card').forEach(card => {
+          const name = card.querySelector('.product-name').textContent.toLowerCase();
+          const category = categorySelect.value;
+          // Можно добавить логику фильтрации по category
+          if (name.includes(query)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    
+      categorySelect.addEventListener('change', function() {
+        const category = this.value;
+        // В данном примере категории не привязаны к товару, реализуйте по необходимости
+        // Пока оставим без фильтрации
+      });
+    </script>
+    
+
+
+    <script src="assets/js/app.min.js"></script>
+
+</body>
+</html>
